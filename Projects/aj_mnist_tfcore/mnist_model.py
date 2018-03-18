@@ -11,16 +11,16 @@ batch_size = 50
 
 # NOTE: what is None here? Perhaps similar to the -1 for x
 # 28x28 = 784
-# x = tf.placeholder(tf.float32, [None, 784])
-x = tf.placeholder(tf.float32, None)
 
+# YZ: I think these shapes are literally destroyed when these tensors are reshaped. However, they
+#     are good to keep around, because they guide us to understand what we *expect* to go there.
+
+x = tf.placeholder(tf.float32, [None, 784])
 
 # -1 for variable batches, 28w, 28h, 1 color channel
 x_shaped = tf.reshape(x, [-1, 28, 28, 1])
 
-# y = tf.placeholder(tf.float32, [None, 10])
-y = tf.placeholder(tf.float32, None)
-
+y = tf.placeholder(tf.float32, [None, 10])
 
 def create_new_conv_layer(input_data, num_input_channels, num_filters, filter_shape, pool_shape, name):
     # 4th dimension is the number of feature maps
