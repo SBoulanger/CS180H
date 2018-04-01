@@ -1,3 +1,5 @@
+# http://adventuresinmachinelearning.com/convolutional-neural-networks-tutorial-tensorflow/
+
 import tensorflow as tf
 from tensorflow.examples.tutorials.mnist import input_data
 mnist = input_data.read_data_sets('MNIST_data/', one_hot=True)
@@ -9,13 +11,16 @@ batch_size = 50
 
 # NOTE: what is None here? Perhaps similar to the -1 for x
 # 28x28 = 784
+
+# YZ: I think these shapes are literally destroyed when these tensors are reshaped. However, they
+#     are good to keep around, because they guide us to understand what we *expect* to go there.
+
 x = tf.placeholder(tf.float32, [None, 784])
 
 # -1 for variable batches, 28w, 28h, 1 color channel
 x_shaped = tf.reshape(x, [-1, 28, 28, 1])
 
 y = tf.placeholder(tf.float32, [None, 10])
-
 
 def create_new_conv_layer(input_data, num_input_channels, num_filters, filter_shape, pool_shape, name):
     # 4th dimension is the number of feature maps
