@@ -95,7 +95,7 @@ def evaluation(model, supervisor, num_label):
     fd_test_acc = save_to()
     with supervisor.managed_session(config=tf.ConfigProto(allow_soft_placement=True)) as sess:
         supervisor.saver.restore(sess, tf.train.latest_checkpoint(cfg.logdir))
-        tf.logging.info('Model restored!')
+        tf.logging.info(f'Model restored from "{cfg.logdir}"!')
 
         test_acc = 0
         for i in tqdm(range(num_te_batch), total=num_te_batch, ncols=70, leave=False, unit='b'):
