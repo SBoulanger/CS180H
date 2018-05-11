@@ -1,0 +1,10 @@
+#!/bin/bash
+expname=FC_caps
+
+dataset=mnist
+dir="$dataset/$expname"
+python main.py --dynamic_routing=False --dataset "$dataset" --results "results/$dir" --logdir="logdir/$dir"
+
+dataset=fashion-mnist
+dir="$dataset/$expname"
+python main.py --dynamic_routing=False --dataset "$dataset" --results "results/$dir" --logdir="logdir/$dir"
