@@ -21,6 +21,10 @@ flags.DEFINE_boolean('mask_with_y', True, 'use the true label to mask out target
 flags.DEFINE_float('stddev', 0.01, 'stddev for W initializer')
 flags.DEFINE_float('regularization_scale', 0.392, 'regularization coefficient for reconstruction loss, default to 0.0005*784=0.392')
 
+############################
+#   architecture settings  #
+############################
+flags.DEFINE_integer('dynamic_routing', True, 'use dynamic routing between capsules')
 flags.DEFINE_integer('prediction_vector_size', 16, 'size/length of the prediction vector output')
 
 

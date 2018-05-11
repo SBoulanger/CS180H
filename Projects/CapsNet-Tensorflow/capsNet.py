@@ -56,7 +56,7 @@ class CapsNet(object):
 
         # DigitCaps layer, return [batch_size, 10, 16, 1]
         with tf.variable_scope('DigitCaps_layer'):
-            digitCaps = CapsLayer(num_outputs=10, vec_len=cfg.prediction_vector_size, with_routing=True, layer_type='FC')
+            digitCaps = CapsLayer(num_outputs=10, vec_len=cfg.prediction_vector_size, with_routing=cfg.dynamic_routing, layer_type='FC')
             self.caps2 = digitCaps(caps1)
 
         # Decoder structure in Fig. 2
