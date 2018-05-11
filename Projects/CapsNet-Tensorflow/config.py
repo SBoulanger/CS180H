@@ -24,7 +24,7 @@ flags.DEFINE_float('regularization_scale', 0.392, 'regularization coefficient fo
 ############################
 #   architecture settings  #
 ############################
-flags.DEFINE_integer('dynamic_routing', True, 'use dynamic routing between capsules')
+flags.DEFINE_boolean('dynamic_routing', True, 'use dynamic routing between capsules')
 flags.DEFINE_integer('prediction_vector_size', 16, 'size/length of the prediction vector output')
 
 
