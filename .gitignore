@@ -4,3 +4,5 @@
 .vscode
 logdir/*
 __pycache__
+data/
+logdir/
