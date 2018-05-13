@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sub_dir=prediction_vector_sizes
+sub_dir="mnist/prediction_vector_sizes"
 root_dir="."
 
 if [ -z "$@" ]
