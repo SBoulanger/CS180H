@@ -1,0 +1,14 @@
+#!/bin/bash
+subdir="fashion/reg_scale_"
+
+if [ -z "$@" ]
+then
+	echo "No regularization scales  passed to train!"
+fi
+
+for scale in "$@"
+do
+	echo Using regularization scale "$scale".
+	python main.py --dataset fashion-mnist --results "results/"$sub_dir""$size" --logdir="logdir/"$sub_dir""$size" --regularization_scale "$scale"
+	echo ===============================================
+done
