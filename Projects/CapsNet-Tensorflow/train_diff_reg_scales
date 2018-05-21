@@ -1,5 +1,5 @@
 #!/bin/bash
-subdir="fashion/reg_scale_"
+sub_dir="fashion/reg_scale_"
 
 if [ -z "$@" ]
 then
@@ -9,6 +9,6 @@ fi
 for scale in "$@"
 do
 	echo Using regularization scale "$scale".
-	python main.py --dataset fashion-mnist --results "results/"$sub_dir""$size" --logdir="logdir/"$sub_dir""$size" --regularization_scale "$scale"
+	python main.py --dataset fashion-mnist --results "results/$sub_dir$scale" --logdir="logdir/$sub_dir$scale" --regularization_scale "$scale"
 	echo ===============================================
 done
